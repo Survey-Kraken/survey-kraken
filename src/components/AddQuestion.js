@@ -3,11 +3,22 @@ import React from 'react';
 
 
 //code goes here
-const AddQuestion = () => {
-  return(
+class AddQuestion extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    <div>What?</div>
-  )
+  render () {
+    return(
+
+      <div>
+        <button onClick={() => this.props.addQuestion('multipleChoice')}>Multiple Choice</button>
+        <button onClick={() => this.props.addQuestion('t/f')}>True/False</button>
+        <button onClick={() => this.props.addQuestion('text')}>Text</button>
+      </div>
+    )
+  }
+
 }
 
 
