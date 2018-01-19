@@ -3,6 +3,7 @@ import React from 'react';
 import CreateSurvey from '../components/CreateSurvey'
 import AddQuestion from '../components/AddQuestion'
 import ViewAll from '../components/ViewAll'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const LandingPage = () => {
   function handleClick() {
@@ -15,12 +16,12 @@ const LandingPage = () => {
     <p>Please begin by either creating a survey or viewing/taking a survey</p>
     <div>
       <button onClick={handleClick}>
-      <CreateSurvey />
+        <Link to={'/create'}>Create a new Survey</Link>
       </button>
     </div>
     <div>
       <button onClick={handleClick}>
-      <ViewAll />
+        <Link to={'/surveys'}>Take a Survey</Link>
       </button>
     </div>
     </div>
