@@ -61,6 +61,7 @@ class CreateSurvey extends React.Component {
             <input type='text' name='title' onChange={this.handleChangeTitle}/>
           </div>
           <div>
+            <span>Choose a type of question to add: </span>
             {this.state.questions.map(function(question, index) {
               return <Question question={question} key={index}/>
             })}
