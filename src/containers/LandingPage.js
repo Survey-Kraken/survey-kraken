@@ -1,9 +1,5 @@
 import React from 'react';
-
-import CreateSurvey from '../components/CreateSurvey'
-import AddQuestion from '../components/AddQuestion'
-import ViewAll from '../components/ViewAll'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
 
@@ -20,6 +16,11 @@ const LandingPage = () => {
       <div>
         <button>
           <Link to={'/surveys'}>Take a Survey</Link>
+        </button>
+      </div>
+      <div>
+        <button>
+          <Link to={'/viewAll'}>View All Surveys</Link>
         </button>
       </div>
     </div>

@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import LandingPage from './components/LandingPage';
-import CreateSurvey from './components/CreateSurvey'
-import ViewAll from './components/ViewAll'
+import LandingPage from './containers/LandingPage';
+import CreateSurvey from './containers/CreateSurvey'
+import ViewAll from './containers/ViewAll'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store, { history } from './store.js';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className = 'app'>
           <Route exact path='/' render={(props) => <LandingPage />}/>
           <Route path='/create' component={ CreateSurvey } />
           <Route path='/surveys' component={ ViewAll } />

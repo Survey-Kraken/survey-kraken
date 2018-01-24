@@ -1,20 +1,18 @@
 import React from 'react';
-
+import {addQuestion} from '../actions/index.js';
+import store from '../store.js';
 
 
 //code goes here
 class AddQuestion extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render () {
     return(
-
       <div>
-        <button onClick={() => this.props.addQuestion('multipleChoice')}>Multiple Choice</button>
-        <button onClick={() => this.props.addQuestion('t/f')}>True/False</button>
-        <button onClick={() => this.props.addQuestion('text')}>Text</button>
+        <div>Choose a type of question to add: </div>
+        <button onClick={() => store.dispatch(addQuestion('multipleChoice'))}>Multiple Choice</button>
+        <button onClick={() => store.dispatch(addQuestion('t/f'))}>True/False</button>
+        <button onClick={() => store.dispatch(addQuestion('text'))}>Text</button>
       </div>
     )
   }
