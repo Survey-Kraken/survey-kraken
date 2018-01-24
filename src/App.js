@@ -4,9 +4,11 @@ import LandingPage from './containers/LandingPage';
 import CreateSurvey from './containers/CreateSurvey'
 import ViewAll from './containers/ViewAll'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import store from './store.js';
+import {connect} from 'react-redux'
+
 
 class App extends Component {
+
   render() {
     return (
       <Router>
@@ -20,4 +22,9 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return state
+}
+
+
+export default connect(mapStateToProps)(App)

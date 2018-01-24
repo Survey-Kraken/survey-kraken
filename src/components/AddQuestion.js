@@ -5,7 +5,9 @@ import store from '../store.js';
 
 //code goes here
 class AddQuestion extends React.Component {
-
+  componentDudMount() {
+    console.log('question mount')
+  }
   render () {
     return(
       <div>

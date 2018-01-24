@@ -9,29 +9,31 @@ const initialState = {
 }
 
 function newSurvey(state = initialState, action) {
+  console.log('helllo')
   const question = {};
   switch(action.type) {
     case ADD_QUESTION:
       switch (action.payload) {
         case 't/f':
-        question['type'] = action.payload
-        question['prompt'] = ''
-        question['choices'] = ['true', 'false']
-        break;
+          question['type'] = action.payload
+          question['prompt'] = ''
+          question['choices'] = ['true', 'false']
+          break;
         case 'multipleChoice':
-        question['type'] = action.payload
-        question['prompt'] = '';
-        question['choices'] = ['','','',''];
-        break;
+          console.log('multiple')
+          question['type'] = action.payload
+          question['prompt'] = '';
+          question['choices'] = ['','','',''];
+          break;
         default:
-        question['type'] = action.payload
-        question['prompt'] = '';
-        question['response'] = '';
-        break;
+          question['type'] = action.payload
+          question['prompt'] = '';
+          question['response'] = '';
+          break;
       }
       const newSurvey = state.newSurvey;
       newSurvey.questions.push(question);
-      return Object.assign({}, state, newSurvey)
+      return Object.assign({}, state, {newSurvey})
     default:
       return state;
   }
