@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.integer('survey_id').references('surveys.id').notNullable().onDelete('CASCADE');
     table.string('prompt').notNullable();
     table.string('type').notNullable();
-    table.string('order').notNullable();
+    table.integer('order').notNullable();
   })
 };
 
